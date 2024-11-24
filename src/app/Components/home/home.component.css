@@ -1,0 +1,9 @@
+
+div .heading{
+    padding-top: 90px;
+    text-align: center;
+    font-size: 70px;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px #FF0000;
+    font-weight: bold;
+}
