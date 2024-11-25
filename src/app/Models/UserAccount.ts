@@ -1,17 +1,16 @@
 export interface UserAccount {
-    userId: number,
-    fullName: string,
+   // id: number,
+    name: string,
     email: string,
-    password: string,
-    role: any
+    //password: string,
+    licenceNumber : string,
+    address : string,
+    nic : string,
+    phoneNumber : string,
+
 }
 
 export interface IToken{
     token: string;
 }
 
-export enum Roles {
-    Admin = 0,
-    Editor = 1,
-    Viewer = 2
-}

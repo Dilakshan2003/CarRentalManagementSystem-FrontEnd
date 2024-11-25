@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserAccountService } from '../../Service/user-account.service';
-import { UserAccount } from '../../Models/UserAccount';
+
 
 @Component({
   selector: 'app-register',
@@ -13,54 +14,33 @@ import { UserAccount } from '../../Models/UserAccount';
 
 
 export class RegisterComponent {
+  registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userAccountService: UserAccountService) {
+  constructor(
+    private fb: FormBuilder,
+    private userAccountService: UserAccountService,
+    private router: Router
+  ) {
     this.registerForm = this.fb.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-     
-            
-      nic: ['', [Validators.required]],           
-      phoneNumber: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      licenceNumber: ['', [Validators.required]],
       address: ['', [Validators.required]],
-      licenceNumber: ['', [Validators.required]],     
+      nic: ['', [Validators.required, Validators.pattern('^[0-9]{9}[vVxX]$')]],
+      password: ['']
     });
   }
 
-  passwordInput!: string;
-  registerForm: FormGroup;
-  userAccount!: UserAccount;
-
-  checkPassword(event: any) {           
-    if (event.target.value !== this.passwordInput) {
-      console.log(false);
-    } else {
-      console.log(true);
+  onSubmit() {
+    if (this.registerForm.valid) {
+      this.userAccountService.register(this.registerForm.value).subscribe(response => {
+        alert('User registered successfully');
+        this.router.navigate(['/login']);  // Redirect to login page after registration
+      }, error => {
+        console.error('Registration failed', error);
+      });
     }
   }
-
-  onRegister() {
-    
-    this.userAccount = this.registerForm.value;
-
-    console.log(this.userAccount);
-
-    const newAccount = {
-     
-      "nic": this.registerForm.get('nic')?.value,
-      "name": this.registerForm.get('name')?.value,
-      "email": this.registerForm.get('email')?.value,
-      "phoneNumber": this.registerForm.get('phoneNumber')?.value,
-      "address": this.registerForm.get('address')?.value,
-      "password": this.registerForm.get('password')?.value,
-      "licenceNumber": this.registerForm.get('licenceNumber')?.value,
-    };
-
-
-    this.userAccountService.registerUser(newAccount).subscribe(data => {
-      console.log(data);
-    });
-   }
 }
-
+    

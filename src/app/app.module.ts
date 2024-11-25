@@ -19,7 +19,8 @@ import { WindowComponent } from './Components/window/window.component';
     RegisterComponent,
     HomeComponent,
     CarComponent,
-    WindowComponent
+    WindowComponent,
+    
   ],
   imports: [
     BrowserModule,      
@@ -27,7 +28,9 @@ import { WindowComponent } from './Components/window/window.component';
     FormsModule,          
     ReactiveFormsModule,  
     HttpClientModule,
-    RouterModule
+    RouterModule,
+  
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
