@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CarService } from '../../Service/car.service';
+import { Car } from '../../Models/Car';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +10,17 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  cars: Car[] = [];
 
+  constructor(private carService: CarService) {}
+
+  ngOnInit(): void {
+    this.carService.getCars().subscribe(cars => {
+      this.cars = cars;
+    });
+  }
+
+  viewDetails(car: Car): void {
+    
+  }
 }

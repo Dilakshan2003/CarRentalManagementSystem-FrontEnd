@@ -13,6 +13,57 @@
     </div>
 </body>
 
+<div class="finance">
+  
+  <h1 style="text-align: center; font-size: 48px;">Our Rental Fleet</h1>
+  <h3 style="text-align: center; font-size: 20px; margin-top: 50px;"> To contribute to positive change and achieve our <br>sustainability goals with many extraordinary </h3>
+
+  <div style="display: flex; align-items: center;"> <!-- Added align-items to center the content vertically -->
+    <img src="/images/ad-girl_image.jpg" height="600" width="500" style="margin-top: 50px; margin-left: 400px; box-shadow: 0px 5px 5px rgb(0, 0, 0 );"> <!-- Removed semicolons and adjusted margin-top -->
+    
+    <div style="margin-left: 30px;">
+      <h1 style="text-align: start; font-size: 26px;">About Company</h1>
+      <h1 style="text-align: start; font-size: 40px;">Our You start the engine <br> and your adventure <br> begins</h1>
+      <h3 style="text-align: start; font-size: 18px;">
+        Certain but she but shyness why cottage. Guy the put<br> instrument sir entreaties affronting.
+        Pretended <br> exquisite see cordially the you. <br> Weeks quiet do vexed or whose. Motionless if no to a
+        affronting <br> imprudence no precaution. My indulged as disposal strongly attended.
+      </h3>
+    </div>
+  </div>
+</div>
+
+
 <section style="width: 100%; overflow-y: scroll;" class="shadow p-4 m-4 bg-white rounded">
   <router-outlet></router-outlet>
 </section>
+
+<div class="customer">
+  <h2 style="font-weight: bold;">Available Cars</h2>
+  <div class="cars-list">
+    <div *ngFor="let car of cars">
+      <div class="car-card">
+        <h3>{{ car.make }} {{ car.model }}</h3>
+        <h4>{{ car.year }}</h4>
+
+        <p>Price per day: ${{ car.pricePerDay }}</p>
+        <p>Available: {{ car.isAvailable ? 'Yes' : 'No' }}</p>
+        <img [src]="car.imageFilePath" alt="{{ car.make }} {{ car.model }}" class="car-image" />
+        
+
+        <button (click)="viewDetails(car)">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+  
+       
+
+
+
+
+

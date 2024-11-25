@@ -7,6 +7,8 @@ form {
 
 label {
   margin-top: 10px;
+  color: black;
+  font-size: 22px;
 }
 
 input {
@@ -28,8 +30,13 @@ button:disabled {
 }
 /* Basic styles for the login form */
 .login-form {
-  max-width: 400px;
+  max-width: 500px;
+  height: 450px;
   margin: 0 auto;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
+  border-radius: 12px;
+  margin-top: 200px;
+  box-shadow: 1px 5px 5px rgb(0, 0, 0 );
 }
 
 .login-form label {
@@ -56,5 +63,16 @@ button:disabled {
 }
 
 div {
-  color: red;
+  color: rgb(214, 38, 38);
+}
+
+h2{
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+body{
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
+
 }

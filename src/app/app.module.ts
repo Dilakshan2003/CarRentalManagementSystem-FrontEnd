@@ -11,6 +11,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { HomeComponent } from './Components/home/home.component';
 import { CarComponent } from './Components/car/car.component';
 import { WindowComponent } from './Components/window/window.component';
+import { ManagerComponent } from './Components/manager/manager.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { WindowComponent } from './Components/window/window.component';
     HomeComponent,
     CarComponent,
     WindowComponent,
+    ManagerComponent,
     
   ],
   imports: [

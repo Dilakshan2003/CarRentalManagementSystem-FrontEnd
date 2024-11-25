@@ -1,0 +1,78 @@
+<!-- manager.component.html -->
+<div class="manager">
+  <h2>Manage Cars</h2>
+
+  <div class="add-car-form">
+    <h3>Add Car</h3>
+    <form (ngSubmit)="addCar()">
+      <label for="make">Make:</label>
+      <input [(ngModel)]="newCar.make" name="make" required>
+
+      <label for="model">Model:</label>
+      <input [(ngModel)]="newCar.model" name="model" required>
+
+      <label for="year">Year:</label>
+      <input [(ngModel)]="newCar.year" name="year" type="number" required>
+
+      <label for="pricePerDay">Price per Day:</label>
+      <input [(ngModel)]="newCar.pricePerDay" name="pricePerDay" type="number" required>
+
+      <label for="color">Color:</label>
+      <input [(ngModel)]="newCar.color" name="color" required>
+
+      <label for="isAvailable">Available:</label>
+      <input type="checkbox" [(ngModel)]="newCar.isAvailable" name="isAvailable">
+
+      <label for="carImage">Car Image:</label>
+      <input type="file" (change)="onFileSelected($event)" name="imageFilePath" accept="image/*">
+
+
+      <button type="submit">Add Car</button>
+    </form>
+  </div>
+
+  <h3>Cars List</h3>
+  <div class="cars-list">
+    <div *ngFor="let car of cars">
+      <div class="car-card">
+        <h4>{{ car.make }} {{ car.model }}</h4>
+        <p>Price per day: ${{ car.pricePerDay }}</p>
+        <p>Available: {{ car.isAvailable ? 'Yes' : 'No' }}</p>
+        <img *ngIf="car.imageFilePath" [src]="car.imageFilePath" alt="{{ car.make }} {{ car.model }} image" class="car-image">
+        <button (click)="editCar(car)">Edit</button>
+        <button (click)="deleteCar(car.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Car Modal -->
+  <div *ngIf="carToEdit" class="edit-car-modal">
+    <h3>Edit Car</h3>
+    <form (ngSubmit)="updateCar()">
+      <label for="make">Make:</label>
+      <input [(ngModel)]="carToEdit.make" name="make" required>
+
+      <label for="model">Model:</label>
+      <input [(ngModel)]="carToEdit.model" name="model" required>
+
+      <label for="year">Year:</label>
+      <input [(ngModel)]="carToEdit.year" name="year" type="number" required>
+
+      <label for="pricePerDay">Price per Day:</label>
+      <input [(ngModel)]="carToEdit.pricePerDay" name="pricePerDay" type="number" required>
+
+      <label for="color">Color:</label>
+      <input [(ngModel)]="carToEdit.color" name="color" required>
+
+      <label for="isAvailable">Available:</label>
+      <input type="checkbox" [(ngModel)]="carToEdit.isAvailable" name="isAvailable">
+
+      <label for="carImage">Car Image:</label>
+      <input type="file" (change)="onFileSelected($event, true)" name="carImage" accept="image/*">
+
+
+      <button type="submit">Update Car</button>
+      <button (click)="carToEdit = null">Cancel</button>
+    </form>
+  </div>
+</div>
