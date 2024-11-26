@@ -19,22 +19,41 @@ export class LoginComponent  {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: [ '',  [ Validators.required,Validators.email,],],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
   onSubmit() {
+    
+    const hardcodedManagerEmail = 'a@gmail.com';
+    const hardcodedManagerPassword = 'aaaaaaaa';
+
     if (this.loginForm.valid) {
-      this.userAccountService.login(this.loginForm.value).subscribe(response => {
-        if (response) {
-          this.router.navigate(['/home']);  // Redirect to home page after successful login
-        } else {
-          alert('Invalid credentials');
-        }
-      }, error => {
-        console.error('Login failed', error);
-      });
+      
+      const { email, password } = this.loginForm.value;
+
+      
+      if (email === hardcodedManagerEmail && password === hardcodedManagerPassword) {
+        this.router.navigate(['/manager']);
+      } else {
+        
+        this.userAccountService.login(this.loginForm.value).subscribe(
+          (response) => {
+            if (response) {
+              this.router.navigate(['/home']);
+            } else {
+              alert('Invalid credentials');
+            }
+          },
+          (error) => {
+            console.error('Login failed', error);
+            alert('Login failed. Please try again.');
+          }
+        );
+      }
+    } else {
+      alert('Please fill in all fields correctly.');
     }
   }
 }

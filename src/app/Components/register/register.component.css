@@ -2,16 +2,32 @@
 .register-form {
   max-width: 400px;
   margin: 0 auto;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
+  border-radius: 12px;
+  margin-top: 100px;
+  box-shadow: 1px 5px 5px rgb(0, 0, 0 );
+  max-width: 800px;
+  height:  650px;
 }
+ form{
+  padding: 20px;
+ 
+ }
+ .form-inside{
+  display: flex;
+  justify-content: space-around;
+ }
 
 .register-form label {
   display: block;
   margin: 10px 0 5px;
+  color: black;
+  font-size: 22px;
 }
 
 .register-form input,
 .register-form textarea {
-  width: 100%;
+  width: 350px;
   padding: 8px;
   margin-bottom: 10px;
 }
@@ -22,6 +38,8 @@ button {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  width: 100%;
+ 
 }
 
 button:disabled {
@@ -30,4 +48,14 @@ button:disabled {
 
 div {
   color: red;
+}
+h2{
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+body{
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
+
 }

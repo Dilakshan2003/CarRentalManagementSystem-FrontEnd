@@ -1,6 +1,9 @@
+<body>
 <div class="register-form">
   <h2>Register</h2>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-inside">
+    <div>
     <label for="name">Name</label>
     <input id="name" formControlName="name" />
     <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">Name is required and must be at least 3 characters</div>
@@ -17,25 +20,25 @@
     <input id="licenceNumber" formControlName="licenceNumber" />
     <div *ngIf="registerForm.get('licenceNumber')?.invalid && registerForm.get('licenceNumber')?.touched">License number is required</div>
 
+  </div>
+
+  <div>
 
     <label for="password">Password</label>
     <input id="password" formControlName="password">
-    <!-- <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">License number is required</div> -->
-
-
-
-
-
-
-
+    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">password is required and must be at least 8 characters</div>
+    
     <label for="address">Address</label>
-    <textarea id="address" formControlName="address"></textarea>
+    <input id="address" formControlName="address">
     <div *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched">Address is required</div>
 
     <label for="nic">NIC</label>
     <input id="nic" formControlName="nic" />
     <div *ngIf="registerForm.get('nic')?.invalid && registerForm.get('nic')?.touched">NIC is required and must be in valid format</div>
 
+    </div>
+   </div>
     <button type="submit" [disabled]="registerForm.invalid">Register</button>
   </form>
 </div>
+</body>

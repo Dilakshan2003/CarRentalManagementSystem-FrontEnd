@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 
 
 
@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class UserAccountService {
   
   private apiUrl = 'http://localhost:5120/api/Customer'; 
+  private loginURl = '  http://localhost:5120/api/CustomerLogin/login';
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +24,13 @@ export class UserAccountService {
   }
 
 
-  login(userData: any): Observable<any> {
-    return this.http.get(this.apiUrl ,userData);
+  login(userData: any){
+    return this.http.post(this.loginURl ,userData);
   }
+
+  
+  // getCustomer(userData: any){
+  //   return this.http.get(this.apiUrl ,userData);
+  // }
+
 }

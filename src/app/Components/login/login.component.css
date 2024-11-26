@@ -31,7 +31,7 @@ button:disabled {
 /* Basic styles for the login form */
 .login-form {
   max-width: 500px;
-  height: 450px;
+  height: 500px;
   margin: 0 auto;
   background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
   border-radius: 12px;
@@ -75,4 +75,10 @@ h2{
 body{
   background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
 
+}
+
+h4{
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  text-align: center;
 }
