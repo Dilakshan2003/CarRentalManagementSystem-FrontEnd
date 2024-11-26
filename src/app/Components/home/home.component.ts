@@ -12,6 +12,8 @@ import { Car } from '../../Models/Car';
 export class HomeComponent {
   cars: Car[] = [];
 
+  selectedCar: Car | null = null;
+
   constructor(private carService: CarService) {}
 
   ngOnInit(): void {
@@ -21,6 +23,13 @@ export class HomeComponent {
   }
 
   viewDetails(car: Car): void {
-    
+    this.selectedCar = car;
   }
+
+   cancel() {
+    this.selectedCar = null; // Close the popup by resetting the selectedCar
+  }
+
 }
+
+

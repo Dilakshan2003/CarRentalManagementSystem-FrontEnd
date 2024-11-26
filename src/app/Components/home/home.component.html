@@ -39,23 +39,46 @@
 </section>
 
 <div class="customer">
-  <h2 style="font-weight: bold;">Available Cars</h2>
+  <h2 style="font-weight: bold; ">Available Cars</h2>
   <div class="cars-list">
     <div *ngFor="let car of cars">
       <div class="car-card">
         <h3>{{ car.make }} {{ car.model }}</h3>
         <h4>{{ car.year }}</h4>
-
+         
         <p>Price per day: ${{ car.pricePerDay }}</p>
         <p>Available: {{ car.isAvailable ? 'Yes' : 'No' }}</p>
         <img [src]="car.imageFilePath" alt="{{ car.make }} {{ car.model }}" class="car-image" />
         
 
         <button (click)="viewDetails(car)">View Details</button>
+
+
+
+      </div>
+      <div *ngIf="selectedCar === car" class="popup-overlay">
+        <div class="popup">
+          <h3>Car Details</h3>
+          <img [src]="car.imageFilePath">
+          <p><strong>Make:</strong> {{ car.make }}</p>
+          <p><strong>Model:</strong> {{ car.model }}</p>
+          <p><strong>Year:</strong> {{ car.year }}</p>
+          <p><strong>Price per Day:</strong> ${{ car.pricePerDay }}</p>
+          <p><strong>Color:</strong> {{ car.color }} color</p>
+      
+          <div class="popup-buttons">
+            <button (click)="cancel()">Cancel</button>
+            <button >Rent</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
 
 
 
