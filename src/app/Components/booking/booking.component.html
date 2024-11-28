@@ -1,0 +1,15 @@
+<!-- booking.component.html -->
+
+<div>
+    <h2>Book a Car</h2>
+    <form (ngSubmit)="onBookCar()">
+      <label for="startDate">Start Date</label>
+      <input type="date" id="startDate" [(ngModel)]="bookingData.startDate" name="startDate" required />
+  
+      <label for="endDate">End Date</label>
+      <input type="date" id="endDate" [(ngModel)]="bookingData.endDate" name="endDate" required />
+  
+      <button type="submit">Book Car</button>
+    </form>
+  </div>
+  

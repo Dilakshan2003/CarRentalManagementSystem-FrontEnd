@@ -6,15 +6,24 @@ import { RegisterComponent } from './Components/register/register.component';
 import { WindowComponent } from './Components/window/window.component';
 import { ManagerComponent } from './Components/managercomponents/manager/manager.component';
 import { MangerDashboardComponent } from './Components/managercomponents/manger-dashboard/manger-dashboard.component';
+import { RentalRequestComponent } from './Components/managercomponents/rental-request/rental-request.component';
+import { BookingComponent } from './Components/booking/booking.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'window', component: WindowComponent},
-  { path: 'manager', component: ManagerComponent},
-  { path: 'managerdashboard', component: MangerDashboardComponent},
+  { path: 'booking', component: BookingComponent},
+  { path: 'login', component: LoginComponent},
+  
+  { path: 'managerdashboard', 
+     component: MangerDashboardComponent,
+      children: [
+        { path: 'manager', component: ManagerComponent},
+        { path: 'rentalRequest', component: RentalRequestComponent},
+    ]
+  },
   
  
 

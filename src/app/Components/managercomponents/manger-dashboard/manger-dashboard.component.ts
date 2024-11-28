@@ -12,19 +12,8 @@ export class MangerDashboardComponent {
        
   constructor(private router: Router) {}
 
-  // Method to navigate to view reports
-  viewReports(): void {
-    this.router.navigate(['/manager']);
-  }
-
-  // Method to navigate to manage employees
-  manageEmployees(): void {
-    this.router.navigate(['/manage-employees']);
-  }
-
-  // Method to navigate to assign tasks
-  assignTasks(): void {
-    this.router.navigate(['/assign-tasks']);
-  }
-
+  // Function to navigate to the selected page
+  // showPage1(page: string) {
+  //   this.router.navigate(['/manager/login']);
+  // }
 }

@@ -13,6 +13,8 @@ import { CarComponent } from './Components/car/car.component';
 import { WindowComponent } from './Components/window/window.component';
 import { ManagerComponent } from './Components/managercomponents/manager/manager.component';
 import { MangerDashboardComponent } from './Components/managercomponents/manger-dashboard/manger-dashboard.component';
+import { BookingComponent } from './Components/booking/booking.component';
+import { RentalRequestComponent } from './Components/managercomponents/rental-request/rental-request.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MangerDashboardComponent } from './Components/managercomponents/manger-
     CarComponent,
     WindowComponent,
     ManagerComponent,
-    MangerDashboardComponent
+    MangerDashboardComponent,
+    BookingComponent,
+    RentalRequestComponent
     
     
   ],

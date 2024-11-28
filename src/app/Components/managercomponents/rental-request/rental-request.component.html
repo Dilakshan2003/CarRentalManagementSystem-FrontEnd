@@ -1,0 +1,18 @@
+<!-- rent-request.component.html -->
+
+<div>
+    <h2>Manager - Rent Requests</h2>
+    <div *ngFor="let booking of Booking">
+      <p>Booking ID: {{ booking.bookingId }}</p>
+      <p>Customer ID: {{ booking.customerId }}</p>
+      <p>Start Date: {{ booking.startDate }}</p>
+      <p>End Date: {{ booking.endDate }}</p>
+      <p>Status: {{ booking.status }}</p>
+      <p>CreateDate: {{ booking.createDate }}</p>
+      
+  
+      <button (click)="manageBooking(booking.bookingId, 'approved')">Approve</button>
+      <button (click)="manageBooking(booking.bookingId, 'cancelled')">Cancel</button>
+    </div>
+  </div>
+  
