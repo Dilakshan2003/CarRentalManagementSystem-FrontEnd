@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BookingService } from '../../../Service/booking.service';
+import { CarService } from '../../../Service/car.service';
 import { Booking } from '../../../Models/booking';
 
 
@@ -15,7 +15,7 @@ export class RentalRequestComponent {
   Booking !: Booking[];
   // bookings = [];  // List of bookings waiting for approval
 
-  constructor(private bookingService: BookingService) { }
+  constructor(private car: CarService) { }
 
   ngOnInit(): void {
     this.fetchPendingBookings();
@@ -23,14 +23,14 @@ export class RentalRequestComponent {
 
   // Fetch pending bookings for the manager
   fetchPendingBookings() {
-    this.bookingService.getPendingBookings().subscribe(bookings => {
+    this.car.getPendingBookings().subscribe(bookings => {
       bookings = bookings;
     });
   }
 
   // Approve or cancel the booking
   manageBooking(bookingId: number, status: string) {
-    this.bookingService.manageBookingStatus(bookingId, status).subscribe(response => {
+    this.car.manageBookingStatus(bookingId, status).subscribe(response => {
       console.log(`Booking ${status}:`, response);
       this.fetchPendingBookings(); // Refresh the list after action
     });

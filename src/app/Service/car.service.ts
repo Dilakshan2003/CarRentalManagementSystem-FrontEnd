@@ -2,45 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Car } from '../Models/Car';
+import { Booking } from '../Models/booking';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-//   private apiUrl = 'http://localhost:5120/api/Car'; 
 
-//   constructor(private http: HttpClient) {}
+private apiUrl = 'http://localhost:5120/api/Car'; 
 
-//   // Get all cars
-//   getCars(): Observable<Car[]> {
-//     return this.http.get<Car[]>(this.apiUrl);
-//   }
-  
-   
-//   register(userData :any){
-//     return this.http.post(this.apiUrl , userData)
-//   }
-
-
-
-
-//   // Add a new car
-//   addCar(car: any) {
-//     return this.http.post(this.apiUrl, car);
-//   }
-
-//   // Update an existing car
-//   updateCar(id: number, car: Car): Observable<Car> {
-//     return this.http.put<Car>(`${this.apiUrl}/${id}`, car);
-//   }
-
-//   // Delete a car
-//   deleteCar(id: number): Observable<void> {
-//     return this.http.delete<void>(`${this.apiUrl}/${id}`);
-//   }
-// }
-private apiUrl = 'http://localhost:5120/api/Car';  // API URL
+private bookingUrl = 'http://localhost:5120/api/Booking'  
 
   constructor(private http: HttpClient) {}
 
@@ -71,4 +43,28 @@ private apiUrl = 'http://localhost:5120/api/Car';  // API URL
   deleteCar(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+
+
+  // Save booking data to the backend
+  saveBooking(bookingData: any): Observable<any> {
+    return this.http.post(`${this.bookingUrl}/`, bookingData);
+  }
+
+  // Send request to the manager for approval or cancellation
+  requestToManager(bookingId: number): Observable<any> {
+    return this.http.post(`${this.bookingUrl}/`, { bookingId });
+  }
+
+  // Approve or Cancel a booking
+  manageBookingStatus(bookingId: number, status: string): Observable<any> {
+    return this.http.put(`${this.bookingUrl}//${bookingId}`, { status });
+  }
+  getPendingBookings(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.bookingUrl}/`);
+  }
+
+
+
+
 }
