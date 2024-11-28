@@ -35,7 +35,7 @@ export class LoginComponent  {
 
       
       if (email === hardcodedManagerEmail && password === hardcodedManagerPassword) {
-        this.router.navigate(['/manager']);
+        this.router.navigate(['/managerdashboard']);
       } else {
         
         this.userAccountService.login(this.loginForm.value).subscribe(

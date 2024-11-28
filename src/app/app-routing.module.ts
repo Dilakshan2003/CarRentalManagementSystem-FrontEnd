@@ -4,7 +4,9 @@ import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { WindowComponent } from './Components/window/window.component';
-import { ManagerComponent } from './Components/manager/manager.component';
+import { ManagerComponent } from './Components/managercomponents/manager/manager.component';
+import { MangerDashboardComponent } from './Components/managercomponents/manger-dashboard/manger-dashboard.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -12,6 +14,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'window', component: WindowComponent},
   { path: 'manager', component: ManagerComponent},
+  { path: 'managerdashboard', component: MangerDashboardComponent},
+  
+ 
+
   {path : '**' , redirectTo : 'window' , pathMatch : 'full'}
 
 

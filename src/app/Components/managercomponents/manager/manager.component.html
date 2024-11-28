@@ -38,7 +38,7 @@
         <h4>{{ car.make }} {{ car.model }}</h4>
         <p>Price per day: ${{ car.pricePerDay }}</p>
         <p>Available: {{ car.isAvailable ? 'Yes' : 'No' }}</p>
-        <img *ngIf="car.imageFilePath" [src]="car.imageFilePath" alt="{{ car.make }} {{ car.model }} image" class="car-image">
+        <img *ngIf="car.imageFilePath" [src]="car.imageFilePath" alt="{{ car.make }} {{ car.model }} image" class="car-image"> <br><br>
         <button (click)="editCar(car)">Edit</button>
         <button (click)="deleteCar(car.id)">Delete</button>
       </div>
@@ -46,7 +46,7 @@
   </div>
 
   <!-- Edit Car Modal -->
-  <div *ngIf="carToEdit" class="edit-car-modal">
+  <!-- <div *ngIf="carToEdit" class="edit-car-modal">
     <h3>Edit Car</h3>
     <form (ngSubmit)="updateCar()">
       <label for="make">Make:</label>
@@ -75,4 +75,4 @@
       <button (click)="carToEdit = null">Cancel</button>
     </form>
   </div>
-</div>
+</div> -->

@@ -4,14 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import For
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { HomeComponent } from './Components/home/home.component';
 import { CarComponent } from './Components/car/car.component';
 import { WindowComponent } from './Components/window/window.component';
-import { ManagerComponent } from './Components/manager/manager.component';
+import { ManagerComponent } from './Components/managercomponents/manager/manager.component';
+import { MangerDashboardComponent } from './Components/managercomponents/manger-dashboard/manger-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { ManagerComponent } from './Components/manager/manager.component';
     CarComponent,
     WindowComponent,
     ManagerComponent,
+    MangerDashboardComponent
+    
     
   ],
   imports: [
@@ -31,6 +34,7 @@ import { ManagerComponent } from './Components/manager/manager.component';
     ReactiveFormsModule,  
     HttpClientModule,
     RouterModule,
+   
   
     
   ],

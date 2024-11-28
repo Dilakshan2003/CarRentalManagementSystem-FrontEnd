@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #e27272;
   }
   
   /* Manager Section */
@@ -30,7 +30,7 @@ body {
   
   /* Add Car Form */
   .add-car-form {
-    background-color: #f4f4f4;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -88,6 +88,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
   }
   
   .car-card:hover {
@@ -95,6 +96,12 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
   
+  .car-card img{
+     max-width: 250px;
+     height: 200px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
   .car-card h4 {
     font-size: 20px;
     color: #333;
@@ -117,10 +124,11 @@ body {
     font-size: 14px;
     margin-right: 10px;
     transition: background-color 0.3s ease;
+
   }
   
   .car-card button:hover {
-    background-color: #e68a00;
+    background-color: #e03a3a;
   }
   
   /* Edit Car Modal */
