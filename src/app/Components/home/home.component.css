@@ -187,5 +187,9 @@ footer{
   color: azure;
   font-size: 12px;
   margin-top: 20px;
-
+}
+.container-fluid {
+ padding: 20px;
+ padding: 20px;
+  background-image: linear-gradient(rgb(0, 0, 0),rgb(142, 232, 238), rgb(253, 255, 255));
 }
