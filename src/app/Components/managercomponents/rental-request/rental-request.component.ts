@@ -12,10 +12,9 @@ import { Booking } from '../../../Models/booking';
 })
 export class RentalRequestComponent {
    
-  Booking !: Booking[];
-  // bookings = [];  // List of bookings waiting for approval
+  bookings: Booking[] = []; // Declare bookings property with type
 
-  constructor(private car: CarService) { }
+  constructor(private carService: CarService) { }
 
   ngOnInit(): void {
     this.fetchPendingBookings();
@@ -23,14 +22,14 @@ export class RentalRequestComponent {
 
   // Fetch pending bookings for the manager
   fetchPendingBookings() {
-    this.car.getPendingBookings().subscribe(bookings => {
-      bookings = bookings;
+    this.carService.getPendingBookings().subscribe(bookings => {
+      this.bookings = bookings; // Update the bookings property correctly
     });
   }
 
   // Approve or cancel the booking
   manageBooking(bookingId: number, status: string) {
-    this.car.manageBookingStatus(bookingId, status).subscribe(response => {
+    this.carService.manageBookingStatus(bookingId, status).subscribe(response => {
       console.log(`Booking ${status}:`, response);
       this.fetchPendingBookings(); // Refresh the list after action
     });

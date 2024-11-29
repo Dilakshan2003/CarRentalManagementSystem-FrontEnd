@@ -1,0 +1,78 @@
+/* Styling for the booking card container */
+.booking-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect to give the card a lift when hovered */
+  .booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Style for the booking details */
+  .booking-details {
+    font-size: 14px;
+    color: #333;
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+  
+  /* Add a subtle color to the label text for clarity */
+  .booking-details span {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Styling for the action buttons */
+  .booking-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  /* Style for each button */
+  .booking-actions button {
+    background-color: #4CAF50; /* Green for 'Approve' */
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Hover effect for the 'Approve' button */
+  .booking-actions button:first-child:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  /* Style for the cancel button */
+  .booking-actions button:last-child {
+    background-color: #f44336; /* Red for 'Cancel' */
+  }
+  
+  /* Hover effect for the 'Cancel' button */
+  .booking-actions button:last-child:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+  }
+  
+  /* Optional: Responsive design for mobile */
+  @media (max-width: 600px) {
+    .booking-card {
+      margin: 10px;
+      padding: 15px;
+    }
+    .booking-actions {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+  

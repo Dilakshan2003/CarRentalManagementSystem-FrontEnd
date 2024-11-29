@@ -66,18 +66,19 @@
           <p><strong>Price per Day:</strong> ${{ car.pricePerDay }}</p>
           <p><strong>Color:</strong> {{ car.color }} color</p>
             
-          <form (ngSubmit)="onBookCar()">
+          <form #bookingForm="ngForm" (ngSubmit)="onBookCar()">
             <label for="startDate">Start Date</label>
             <input type="date" id="startDate" [(ngModel)]="bookingData.startDate" name="startDate" required />
-        
+          
             <label for="endDate">End Date</label>
             <input type="date" id="endDate" [(ngModel)]="bookingData.endDate" name="endDate" required />
+          
+            <div class="popup-buttons">
+              <button type="button" (click)="cancel()">Cancel</button>
+              <button type="submit" [disabled]="!bookingForm.valid">Book car</button>
+            </div>
           </form>
-
-          <div class="popup-buttons">
-            <button (click)="cancel()">Cancel</button>
-            <button type="submit" >Book car</button>
-          </div>
+          
         </div>
       </div>
     </div>

@@ -48,21 +48,56 @@ private bookingUrl = 'http://localhost:5120/api/Booking'
 
   // Save booking data to the backend
   saveBooking(bookingData: any): Observable<any> {
-    return this.http.post(`${this.bookingUrl}/`, bookingData);
+    return this.http.post<any>(this.bookingUrl, bookingData);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // Send request to the manager for approval or cancellation
   requestToManager(bookingId: number): Observable<any> {
     return this.http.post(`${this.bookingUrl}/`, { bookingId });
   }
 
+  getPendingBookings(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.bookingUrl}/`);
+  }
+ 
+
+
+
+
+
+
+
+
+
   // Approve or Cancel a booking
   manageBookingStatus(bookingId: number, status: string): Observable<any> {
     return this.http.put(`${this.bookingUrl}//${bookingId}`, { status });
   }
-  getPendingBookings(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.bookingUrl}/`);
-  }
+  // getPendingBookings(): Observable<any[]> {
+  //   return this.http.get<any[]>(`${this.bookingUrl}/`);
+  // }
 
 
 
