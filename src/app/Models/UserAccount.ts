@@ -1,8 +1,7 @@
 export interface UserAccount {
-   // id: number,
+   
     name: string,
     email: string,
-    //password: string,
     licenceNumber : string,
     address : string,
     nic : string,

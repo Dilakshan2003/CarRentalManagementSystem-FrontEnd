@@ -80,10 +80,11 @@ export class HomeComponent {
         this.carService.requestToManager(this.bookingData.bookingId).subscribe(
           managerResponse => {
             console.log('Request sent to manager:', managerResponse);
+            alert('Bokking added successfully!' );
           },
           managerError => {
             console.error('Error sending request to manager:', managerError);
-            alert('Bokking added successfully!!!!!!' );
+            alert('Error');
           }
         );
       },
