@@ -4,5 +4,5 @@ export interface Booking {
     startDate: string; 
     endDate: string;   
     status: number;    
-    createDate: string; 
+    createdDate: string; 
 }

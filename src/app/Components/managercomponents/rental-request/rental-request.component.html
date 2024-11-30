@@ -6,7 +6,7 @@
   <p class="booking-details">Start Date: {{ booking.startDate }}</p>
   <p class="booking-details">End Date: {{ booking.endDate }}</p>
   <p class="booking-details">Status: {{ booking.status }}</p>
-  <p class="booking-details">Create Date: {{ booking.createDate }}</p>
+  <p class="booking-details">booked  Date: {{ booking.createdDate }}</p>
   <div class="booking-actions">
     <button (click)="manageBooking(booking.bookingId, 'approved')">Approve</button>
     <button (click)="manageBooking(booking.bookingId, 'cancelled')">Cancel</button>

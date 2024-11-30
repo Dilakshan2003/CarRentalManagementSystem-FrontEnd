@@ -4,8 +4,9 @@ div .heading{
     text-align: center;
     font-size: 70px;
     color: rgb(0, 0, 0);
-    text-shadow: 2px 2px #FF0000;
+    text-shadow: 2px 2px #bd1111;
     font-weight: bold;
+    letter-spacing: 5px;
 }
 
 .customer {
@@ -191,5 +192,5 @@ footer{
 .container-fluid {
  padding: 20px;
  padding: 20px;
-  background-image: linear-gradient(rgb(0, 0, 0),rgb(142, 232, 238), rgb(253, 255, 255));
+  background-image: linear-gradient(rgb(0, 0, 0),rgb(105, 120, 129), rgb(253, 255, 255));
 }
