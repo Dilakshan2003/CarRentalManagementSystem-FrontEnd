@@ -39,7 +39,7 @@ div .heading{
   
 
   .car-card {
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(105, 170, 207), rgb(0, 0, 0));
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
@@ -110,7 +110,7 @@ div .heading{
 
 .finance{
     margin-top: 100px;
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(21, 51, 88), rgb(0, 0, 0));
      
 }
 
@@ -133,7 +133,7 @@ div .heading{
 
 /* Popup modal */
 .popup {
-  background-image: linear-gradient(rgb(136, 240, 231), rgb(255, 255, 255), rgb(142, 232, 238));
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(255, 255, 255), rgb(0, 0, 0));
   padding: 20px;
   border-radius: 8px;
   width: 400px;
@@ -192,5 +192,10 @@ footer{
 .container-fluid {
  padding: 20px;
  padding: 20px;
-  background-image: linear-gradient(rgb(0, 0, 0),rgb(105, 120, 129), rgb(253, 255, 255));
+  background-image: linear-gradient(rgb(0, 0, 0),rgb(75, 84, 90), rgb(7, 7, 7));
+}
+
+.container-fluid a {
+  color: white;
+  font-size: 22px;
 }
