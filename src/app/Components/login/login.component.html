@@ -1,19 +1,24 @@
 <body>
-<div class="login-form">
-  <h2 >Login</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label for="email">Email</label>
-    <input id="email" formControlName="email" />
-    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">Invalid email</div>
+  <div class="login-form">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" />
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">
+        Invalid email
+      </div>
 
-    <label for="password">Password</label>
-    <input type="password" id="password" formControlName="password" />
-    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">Password is required and must be at least 8 characters</div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" />
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+        Password is required and must be at least 8 characters
+      </div>
 
-    <button type="submit" [disabled]="loginForm.invalid">Login</button> <br><br>
-    <h4>If you don't have an account, please <a [routerLink]="['/register']">Register here</a></h4>
-  </form>
-</div>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <h4 style="text-align: center; margin-top: 20px;">
+        If you don't have an account, please
+        <a [routerLink]="['/register']">Register here</a>
+      </h4>
+    </form>
+  </div>
 </body>
-
-  

@@ -75,6 +75,6 @@ button:hover:not(:disabled) {
 }
 
 .error-message {
-  color: #ff4b2b;
+  color: #f14e32;
   font-size: 0.9em;
 }
