@@ -39,7 +39,8 @@ div .heading{
   
 
   .car-card {
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(105, 170, 207), rgb(0, 0, 0));
+    /* background-image: linear-gradient(rgb(0, 0, 0), rgb(105, 170, 207), rgb(0, 0, 0)); */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
