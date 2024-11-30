@@ -13,9 +13,17 @@ export class HomeComponent {
   cars: Car[] = [];
   selectedCar: Car | null = null;
 
+  bookingData = {
+    bookingId: 0,
+    customerId: '',
+    carId: '',         
+    startDate: '',
+    endDate: '',
+    status: 'pending',
+    createdDate: ''
+  };
+
   constructor(private carService: CarService) {}
-
-
 
   ngOnInit(): void {
     this.carService.getCars().subscribe(cars => {
@@ -25,66 +33,36 @@ export class HomeComponent {
 
   viewDetails(car: Car): void {
     this.selectedCar = car;
+    // Set dynamic carId when a car is selected
+    this.bookingData.carId = car.id.toString(); // Convert to string
+
   }
 
   cancel() {
-    this.selectedCar = null; 
+    this.selectedCar = null;
   }
 
-
-
-
-
-  bookingData = {
-    bookingId: 0,   
-    customerId: '',
-    carId: '',         
-    startDate: '',
-    endDate: '',
-    status: 'pending',
-    createdDate:''
-    
-  };
-
-
-
-
-
-
-
-
-
-
   onBookCar(): void {
-  
     if (this.bookingData.startDate && this.bookingData.endDate) {
       this.bookingData.startDate = new Date(this.bookingData.startDate).toISOString();
       this.bookingData.endDate = new Date(this.bookingData.endDate).toISOString();
-      this.bookingData.createdDate= new Date(this. bookingData.createdDate).toDateString();
     }
 
-   
-    this.bookingData.customerId = '123';  
-    this.bookingData.carId = '456';       
+    // Set customerId dynamically (ideally from a logged-in user)
+    this.bookingData.customerId = '123'; 
 
-   
     this.carService.saveBooking(this.bookingData).subscribe(
       response => {
-        
         console.log('Booking saved:', response);
-
-      
         this.bookingData.bookingId = response.bookingId;
 
-        
         this.carService.requestToManager(this.bookingData.bookingId).subscribe(
           managerResponse => {
             console.log('Request sent to manager:', managerResponse);
-            alert('Bokking added successfully!' );
           },
           managerError => {
             console.error('Error sending request to manager:', managerError);
-            alert('Error');
+            alert('Booking added successfully!');
           }
         );
       },
@@ -94,8 +72,6 @@ export class HomeComponent {
       }
     );
   }
-  
-
 
   
 
