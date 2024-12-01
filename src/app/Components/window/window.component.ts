@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class WindowComponent {
    
   images: string[] = [
-    'url(/images/slider-1.jpg)',
+    'url(/images/bugatti-sport-car-77.jpg)',
     'url(/images/slide-2.webp)',
     'url(/images/slider-3.jpg)'
   ];

@@ -2,13 +2,18 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #333, #555);
+  background-image: url('/images/car\ in\ left\ site.jpg');
+  background-size: cover;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  padding-left: 55%;
   height: 100vh;
 }
+
+
+
 
 .login-form {
   background-color: #222;
