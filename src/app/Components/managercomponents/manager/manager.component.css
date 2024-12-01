@@ -1,24 +1,24 @@
-/* General Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e27272;
+    background-color: #000000;
   }
   
-  /* Manager Section */
+
   .manager {
     max-width: 1200px;
     margin: 30px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
   
   h2 {
     text-align: center;
-    color: #333;
+    color: #1f1b1b;
     font-size: 32px;
   }
   
@@ -28,9 +28,9 @@ body {
     margin-bottom: 15px;
   }
   
-  /* Add Car Form */
+
   .add-car-form {
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(105, 170, 207), rgb(255, 255, 255));
+   background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -74,7 +74,7 @@ body {
     background-color: #45a049;
   }
   
-  /* Cars List */
+
   .cars-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

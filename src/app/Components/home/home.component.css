@@ -143,7 +143,7 @@ div .heading{
 
 /* Popup modal */
 .popup {
-  background-image: linear-gradient(rgb(0, 0, 0), rgb(255, 255, 255), rgb(0, 0, 0));
+  background-image: linear-gradient(rgb(226, 17, 17),rgb(14, 12, 12), rgb(8, 8, 8));
   padding: 20px;
   border-radius: 8px;
   width: 400px;

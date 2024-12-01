@@ -20,7 +20,8 @@ export class HomeComponent {
     startDate: '',
     endDate: '',
     status: 'pending',
-    createdDate: ''
+    createdDate: '',
+    imageFilePath: ''
   };
 
   constructor(private carService: CarService) {}

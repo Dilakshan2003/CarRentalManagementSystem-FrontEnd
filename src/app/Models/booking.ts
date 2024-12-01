@@ -5,4 +5,5 @@ export interface Booking {
     endDate: string;   
     status: number;    
     createdDate: string; 
+    imageFilePath: string;
 }

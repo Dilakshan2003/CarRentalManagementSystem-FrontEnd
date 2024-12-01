@@ -7,6 +7,9 @@
   <p class="booking-details">End Date: {{ booking.endDate }}</p>
   <p class="booking-details">Status: {{ booking.status }}</p>
   <p class="booking-details">booked  Date: {{ booking.createdDate }}</p>
+  <img *ngIf="booking.imageFilePath" [src]="booking.imageFilePath" alt="Booking Image">
+
+  
   <div class="booking-actions">
     <button (click)="manageBooking(booking.bookingId, 'approved')">Approve</button>
     <button (click)="manageBooking(booking.bookingId, 'cancelled')">Cancel</button>
