@@ -55,22 +55,12 @@ export class HomeComponent {
     this.carService.saveBooking(this.bookingData).subscribe(
       response => {
         console.log('Booking saved:', response);
+        alert('Booking added successfully!'); 
+        
         this.bookingData.bookingId = response.bookingId;
-
-        this.carService.requestToManager(this.bookingData.bookingId).subscribe(
-          managerResponse => {
-            console.log('Request sent to manager:', managerResponse);
-          },
-          managerError => {
-            console.error('Error sending request to manager:', managerError);
-            alert('Booking added successfully!');
-          }
-        );
-      },
-      error => {
-        console.error('Error saving booking:', error);
-        alert('Error saving booking: ' + error.message);
       }
+        
+     
     );
   }
 
