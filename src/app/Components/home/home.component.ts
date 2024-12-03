@@ -15,7 +15,7 @@ export class HomeComponent {
 
   bookingData = {
     bookingId: 0,
-    customerId: '',
+    customerId: localStorage.getItem('customerId'),
     carId: '',         
     startDate: '',
     endDate: '',
@@ -50,7 +50,7 @@ export class HomeComponent {
     }
 
     // Set customerId dynamically (ideally from a logged-in user)
-    this.bookingData.customerId = '123'; 
+      console.log(this.bookingData);
 
     this.carService.saveBooking(this.bookingData).subscribe(
       response => {

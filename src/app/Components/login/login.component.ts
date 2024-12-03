@@ -41,6 +41,9 @@ export class LoginComponent  {
         this.userAccountService.login(this.loginForm.value).subscribe(
           (response) => {
             if (response) {
+              console.log(response);
+              let user = JSON.parse(JSON.stringify(response))
+              localStorage.setItem('customerId' , user.id)
               this.router.navigate(['/home']);
             } else {
               alert('Invalid credentials');

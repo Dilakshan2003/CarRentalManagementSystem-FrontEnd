@@ -11,6 +11,7 @@ export class UserAccountService {
   
   private apiUrl = 'http://localhost:5120/api/Customer'; 
   private loginURl = '  http://localhost:5120/api/CustomerLogin/login';
+ 
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +24,7 @@ export class UserAccountService {
     return this.http.post(this.apiUrl , userData)
   }
 
-
+//sm L s
   login(userData: any){
     return this.http.post(this.loginURl ,userData);
   }

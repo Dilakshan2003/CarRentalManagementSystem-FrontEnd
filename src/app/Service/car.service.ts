@@ -16,6 +16,7 @@ export class CarService {
 private apiUrl = 'http://localhost:5120/api/Car';
   private bookingUrl = 'http://localhost:5120/api/Booking';
   private messageUrlUrl = 'http://localhost:5120/api/Message';
+  private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
 
   constructor(private http: HttpClient) {}
 
@@ -41,11 +42,13 @@ private apiUrl = 'http://localhost:5120/api/Car';
 
  
   saveBooking(bookingData: any): Observable<any> {
-    return this.http.post<any>(this.bookingUrl, bookingData);
+    console.log(bookingData);
+  return this.http.post<any>(this.cusBooking+bookingData.customerId, bookingData);
+ 
   }
 
   requestToManager(bookingId: number): Observable<any> {
-    return this.http.post(`${this.bookingUrl}/`, { bookingId });
+    return this.http.post(`${this.cusBooking}/`, { bookingId });
   }
 
   getPendingBookings(): Observable<Booking[]> {
