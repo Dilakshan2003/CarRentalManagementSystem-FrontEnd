@@ -1,6 +1,8 @@
 <!-- rent-request.component.html -->
 
-<div *ngFor="let booking of bookings" class="booking-card">
+<div *ngFor="let booking of bookings" class="booking-card" style="display: flex;">
+
+  <div>
   <p class="booking-details">Booking ID: {{ booking.bookingId }}</p>
   <p class="booking-details">Customer ID: {{ booking.customerId }}</p>
   <p class="booking-details">Start Date: {{ booking.startDate }}</p>
@@ -8,11 +10,21 @@
   <p class="booking-details">Status: {{ booking.status }}</p>
   <p class="booking-details">booked  Date: {{ booking.createdDate }}</p>
   <img *ngIf="booking.imageFilePath" [src]="booking.imageFilePath" alt="Booking Image">
-
+ 
+ 
   
   <div class="booking-actions">
     <button (click)="manageBooking(booking.bookingId, 'approved')">Approve</button>
     <button (click)="manageBooking(booking.bookingId, 'cancelled')">Cancel</button>
+    <button (click)="deleteBooking(booking.bookingId)">Delete</button>
   </div>
 </div>
+  <div style="margin-left: 100px; width: 100%; margin-top: 60px;">
+    <textarea [(ngModel)]="messageContent" placeholder="Type your message to Customer" style="border-radius: 6px; width: 100%; height: 100px;"></textarea> <br><br>
+    <button (click)="sendMessage()" style="color: rgb(0, 0, 0); width: 60px; height: 40px; border-radius: 8px; background-color: rgb(91, 218, 223);">Send</button>
+  </div>
+
+</div>
+
+
 

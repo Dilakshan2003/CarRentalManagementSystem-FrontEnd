@@ -7,6 +7,7 @@ import { WindowComponent } from './Components/window/window.component';
 import { ManagerComponent } from './Components/managercomponents/manager/manager.component';
 import { MangerDashboardComponent } from './Components/managercomponents/manger-dashboard/manger-dashboard.component';
 import { RentalRequestComponent } from './Components/managercomponents/rental-request/rental-request.component';
+import { InboxComponent } from './Components/inbox/inbox.component';
 
 
 
@@ -14,8 +15,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'window', component: WindowComponent},
-  
+  { path: 'inbox', component: InboxComponent},
   { path: 'login', component: LoginComponent},
+
+  
   
   { path: 'managerdashboard', 
      component: MangerDashboardComponent,

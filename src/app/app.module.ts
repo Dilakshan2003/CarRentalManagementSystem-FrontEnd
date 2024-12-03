@@ -15,6 +15,7 @@ import { ManagerComponent } from './Components/managercomponents/manager/manager
 import { MangerDashboardComponent } from './Components/managercomponents/manger-dashboard/manger-dashboard.component';
 
 import { RentalRequestComponent } from './Components/managercomponents/rental-request/rental-request.component';
+import { InboxComponent } from './Components/inbox/inbox.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RentalRequestComponent } from './Components/managercomponents/rental-re
     WindowComponent,
     ManagerComponent,
     MangerDashboardComponent,
-    RentalRequestComponent
+    RentalRequestComponent,
+    InboxComponent
     
     
   ],

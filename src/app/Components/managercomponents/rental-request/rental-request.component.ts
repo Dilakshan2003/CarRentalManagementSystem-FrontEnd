@@ -11,7 +11,7 @@ import { Booking } from '../../../Models/booking';
   styleUrl: './rental-request.component.css'
 })
 export class RentalRequestComponent {
-   
+  messageContent: string = '';
   bookings: Booking[] = []; // Declare bookings property with type
 
   constructor(private carService: CarService) { }
@@ -34,6 +34,26 @@ export class RentalRequestComponent {
       this.fetchPendingBookings(); // Refresh the list after action
     });
   }
+  
+  sendMessage() {
+    if (this.messageContent) {
+      this.carService.sendMessage(this.messageContent, 'manager').subscribe(() => {
+        this.messageContent = ''; 
+      });
+    }
+  }
 
+
+
+
+  deleteBooking(bookingId: number) {
+    if (confirm('Are you sure you want to delete this booking?')) {
+      this.carService.deleteBooking(bookingId).subscribe(response => {
+        console.log('Booking deleted:', response);
+        
+        this.fetchPendingBookings();
+      });
+    }
+  }
 
 }

@@ -1,0 +1,6 @@
+<div *ngFor="let message of messages">
+    <div>
+      <strong>{{ message.sender }}:</strong> {{ message.content }}
+      <small>{{ message.sentDate | date:'short' }}</small>
+    </div>
+  </div>
