@@ -13,7 +13,9 @@ import { Booking } from '../../../Models/booking';
 export class RentalRequestComponent {
   message = {
     id: '',
-    messageContent: ''
+    messageContent: '',
+    customerId: localStorage.getItem('customerId')
+   
   }
 
   bookings: Booking[] = []; // Declare bookings property with type
@@ -46,8 +48,15 @@ export class RentalRequestComponent {
     console.log(message);
     if (message) {
       console.log(message)
-      this.carService.sendMessage(message, 'manager').subscribe(() => {
+     let reply = {
+        customerId : localStorage.getItem('customerId'),
+        sender : 'Manager',
+        content : message
+      }
+      alert('Message sent successfully!'); 
+      this.carService.sendMessage(reply).subscribe((data) => {
         message = '';
+        console.log(data);
       });
     }
   }

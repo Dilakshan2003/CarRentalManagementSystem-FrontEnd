@@ -8,6 +8,7 @@ import { ManagerComponent } from './Components/managercomponents/manager/manager
 import { MangerDashboardComponent } from './Components/managercomponents/manger-dashboard/manger-dashboard.component';
 import { RentalRequestComponent } from './Components/managercomponents/rental-request/rental-request.component';
 import { InboxComponent } from './Components/inbox/inbox.component';
+import { ManagerInboxComponent } from './Components/managercomponents/manager-inbox/manager-inbox.component';
 
 
 
@@ -25,6 +26,8 @@ const routes: Routes = [
       children: [
         { path: 'manager', component: ManagerComponent},
         { path: 'rentalRequest', component: RentalRequestComponent},
+        { path: 'manger-inbox', component: ManagerInboxComponent},
+
     ]
   },
   

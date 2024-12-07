@@ -14,8 +14,8 @@ export class CarService {
 
 
 private apiUrl = 'http://localhost:5120/api/Car';
-  private bookingUrl = 'http://localhost:5120/api/Booking';
-  private messageUrlUrl = 'http://localhost:5120/api/Message';
+private bookingUrl = 'http://localhost:5120/api/Booking';
+private messageUrlUrl = 'http://localhost:5120/api/Message/';
   private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
 
   constructor(private http: HttpClient) {}
@@ -57,7 +57,7 @@ private apiUrl = 'http://localhost:5120/api/Car';
 
   // Approve or Cancel a booking
   manageBookingStatus(bookingId: number, status: string): Observable<any> {
-    return this.http.put(`${this.bookingUrl}/${bookingId}`, { status });
+    return this.http.put(`http://localhost:5120/api/Booking`, { status });
   }
   
   getCustomerBookings(): Observable<Booking[]> {
@@ -66,13 +66,15 @@ private apiUrl = 'http://localhost:5120/api/Car';
     return this.http.get<Booking[]>(`${this.bookingUrl}/${customerId}/bookings`);
   }
 
-  sendMessage(content: string, sender: string): Observable<void> {
-    const message = { content, sender };
-    return this.http.post<void>(this.messageUrlUrl, message);
+  sendMessage( message  : any , ): Observable<any> {
+    console.log(message );
+    return this.http.post<any>('http://localhost:5120/api/Message', message);
   }
 
-  getMessages(): Observable<message[]> {
-    return this.http.get<message[]>(this.messageUrlUrl);
+
+
+  getMessages(id : number): Observable<message[]> {
+    return this.http.get<message[]>(this.messageUrlUrl + id);
   }
 
   deleteBooking(bookingId: number): Observable<void> {

@@ -13,13 +13,13 @@ export class InboxComponent implements OnInit {
   messages: message[] = [];
 
   constructor(private CarService: CarService) {}
-
+  customerId = parseInt(localStorage.getItem('customerId') || '')
   ngOnInit() {
     this.loadMessages();
   }
 
   loadMessages() {
-    this.CarService.getMessages().subscribe((messages) => {
+    this.CarService.getMessages(this.customerId).subscribe((messages) => {
       this.messages = messages;
     });
   }
