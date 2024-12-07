@@ -202,7 +202,7 @@ footer{
 .container-fluid {
  padding: 20px;
  padding: 20px;
-  background-image: linear-gradient(rgb(0, 0, 0),rgb(75, 84, 90), rgb(7, 7, 7));
+  background-image: linear-gradient(rgb(0, 0, 0),rgb(0, 0, 0), rgb(255, 19, 19));
 }
 
 .container-fluid a {

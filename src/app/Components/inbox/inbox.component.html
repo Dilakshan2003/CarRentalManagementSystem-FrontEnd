@@ -1,9 +1,24 @@
+  <div style="background-image: url( 'images/712047-soft-gradient-gradient-simple-minimalism-4K.jpg'); width: 100%; height: 950px;">
+    
+ 
+  <div class="form">
+  <div class="message-navbar">
+   <img src="/images/message-logo.png" alt="logo">
+     <h1>Messages</h1>
+  </div>
+
+<div class="container">
 <div *ngFor="let message of messages" class="message-container">
   <div class="message-item">
     <strong class="message-sender">{{ message.sender }}:</strong> 
     <span class="message-content">{{ message.content }}</span>
     <small class="message-date">{{ message.sentDate | date:'short' }}</small>
   </div>
+</div>
+</div>
+</div>
+
+
 </div>
 
 

@@ -1,15 +1,18 @@
 .message-container {
-    margin-bottom: 10px; 
+  padding: 20px;
   }
   
   .message-item {
-    background-color:rgb(97, 199, 119) ;
-    padding: 10px;
+    background-color:rgb(220, 248, 198) ;
+    
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
+    margin-left: 20px;
+    
+   
   }
   
   .message-sender {
@@ -30,3 +33,40 @@
     text-align: right;
   }
  
+  h1{
+  
+    color: azure;
+    padding-left: 20px;
+    
+  }
+
+  .message-navbar{
+    background-color: rgb(7, 94, 84);
+    width: 985px;
+    height: 100px;
+    display: flex;
+    padding-top : 20px  ;
+    padding-left: 40px;
+    z-index: +1;
+    position: fixed;
+   
+    
+  }
+
+  .form{
+    width: 1000px;
+    height: 950px;
+    margin-left: 200px;
+    background-image:url(/images/message-bg.jpg) ;
+    overflow-y: scroll; 
+    position: fixed
+  }
+
+  img{
+    width: 60px;
+    height: 60px;
+  }
+
+  .container{
+    margin-top: 150px;
+  }
