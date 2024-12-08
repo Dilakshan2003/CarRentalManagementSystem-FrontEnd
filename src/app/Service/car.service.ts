@@ -16,7 +16,8 @@ export class CarService {
 private apiUrl = 'http://localhost:5120/api/Car';
 private bookingUrl = 'http://localhost:5120/api/Booking';
 private messageUrlUrl = 'http://localhost:5120/api/Message/';
-  private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
+private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
+
 
   constructor(private http: HttpClient) {}
 
@@ -82,6 +83,8 @@ private messageUrlUrl = 'http://localhost:5120/api/Message/';
   }
 
 
- 
+  deleteMessage(messageId: number) {
+    return this.http.delete(`${this.messageUrlUrl}${messageId}`);
+  }
 
 }

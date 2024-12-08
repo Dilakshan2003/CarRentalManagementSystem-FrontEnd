@@ -13,6 +13,7 @@
     <strong class="message-sender">{{ message.sender }}:</strong> 
     <span class="message-content">{{ message.content }}</span>
     <small class="message-date">{{ message.sentDate | date:'short' }}</small>
+    <button class="delete-button" (click)="deleteMessage(message.id)">Delete</button>
   </div>
 </div>
 </div>
