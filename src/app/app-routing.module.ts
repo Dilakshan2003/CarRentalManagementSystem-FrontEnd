@@ -9,6 +9,7 @@ import { MangerDashboardComponent } from './Components/managercomponents/manger-
 import { RentalRequestComponent } from './Components/managercomponents/rental-request/rental-request.component';
 import { InboxComponent } from './Components/inbox/inbox.component';
 import { ManagerInboxComponent } from './Components/managercomponents/manager-inbox/manager-inbox.component';
+import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 
 
 
@@ -18,6 +19,9 @@ const routes: Routes = [
   { path: 'window', component: WindowComponent},
   { path: 'inbox', component: InboxComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'contact', component: ContactUsComponent},
+
+
 
   
   
