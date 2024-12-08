@@ -1,30 +1,37 @@
 import { Component } from '@angular/core';
 import { CarService } from '../../Service/car.service';
 import { Car } from '../../Models/Car';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: false,
-  
+
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   cars: Car[] = [];
   selectedCar: Car | null = null;
+  bookingForm: any;
 
   bookingData = {
-    bookingId: 0,
     customerId: localStorage.getItem('customerId'),
-    carId: '',         
+    carId: '',
     startDate: '',
     endDate: '',
     status: 'pending',
-    createdDate: '',
-    imageFilePath: ''
   };
 
-  constructor(private carService: CarService) {}
+  constructor(private carService: CarService, private fb: FormBuilder) {
+    this.bookingForm = this.fb.group({
+      customerId: [localStorage.getItem('customerId')],
+      carId: [''],
+      startDate: ['', Validators.required],
+      endDate: ['', Validators.required],
+      status: 'pending',
+    })
+  }
 
   ngOnInit(): void {
     this.carService.getCars().subscribe(cars => {
@@ -44,27 +51,25 @@ export class HomeComponent {
   }
 
   onBookCar(): void {
-    if (this.bookingData.startDate && this.bookingData.endDate) {
-      this.bookingData.startDate = new Date(this.bookingData.startDate).toISOString();
-      this.bookingData.endDate = new Date(this.bookingData.endDate).toISOString();
-    }
-
-    // Set customerId dynamically (ideally from a logged-in user)
-      console.log(this.bookingData);
-
-    this.carService.saveBooking(this.bookingData).subscribe(
+    // Set the correct start and end dates in the form before submitting
+    this.bookingForm.patchValue({
+      startDate: new Date(this.bookingForm.value.startDate).toISOString(),
+      endDate: new Date(this.bookingForm.value.endDate).toISOString(),
+      carId: this.selectedCar?.id.toString()
+    });
+  
+    // Now submit the form
+    this.carService.saveBooking(this.bookingForm.value).subscribe(
       response => {
         console.log('Booking saved:', response);
-        alert('Booking added successfully!'); 
-        
-        this.bookingData.bookingId = response.bookingId;
+        this.bookingForm.reset();  // Reset the form after successful submission
+        alert('Booking added successfully!');
       }
-        
-     
     );
   }
-
   
+
+
 
 }
 

@@ -4,7 +4,6 @@
   
   .message-item {
     background-color:rgb(220, 248, 198) ;
-    
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     display: flex;
@@ -56,7 +55,6 @@
   .form{
     width: 1000px;
     height: 950px;
-    margin-left: 200px;
     background-image:url(/images/message-bg.jpg) ;
     overflow-y: scroll; 
     position: fixed
