@@ -33,7 +33,7 @@ export class InboxComponent implements OnInit {
   deleteMessage(messageId: number) {
     this.CarService.deleteMessage(messageId).subscribe({
       next: () => {
-        alert("Delete Send SuccessFull")
+        alert("message deleted")
       }, error: (error) => {
         alert("Delete Message Failed.")
       }, complete: () => {

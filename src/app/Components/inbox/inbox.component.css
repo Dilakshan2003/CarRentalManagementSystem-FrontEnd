@@ -1,5 +1,6 @@
 .message-container {
   padding: 20px;
+  display: flex;
   }
   
   .message-item {
@@ -8,11 +9,18 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     display: flex;
     flex-direction: column;
-    width: 70%;
+    max-width: 70%;
     margin-left: 20px;
+    word-wrap: break-word;
+    font-size: 17px;
+
+ 
     
    
   }
+
+
+
   
   .message-sender {
     font-weight: bold;
@@ -21,15 +29,16 @@
   }
   
   .message-content {
-    color: #000000; 
-    margin-top: 10px;
+    font-size: 22px; /* Font size for content */
+    line-height: 1.5; /* Line height for better readability */
   }
-  
+
   .message-date {
     font-size: 0.9em;
     color: #888; 
     margin-top: 5px;
     text-align: right;
+    margin-left: 60px;
   }
  
   h1{
@@ -67,4 +76,18 @@
 
   .container{
     margin-top: 150px;
+  }
+
+  svg{
+      height: 30px;
+      width: 30px;
+      
+      color: rgb(230, 233, 235);
+      margin-top: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .message-item {
+      max-width: 80%; /* Adjust the max width for smaller screens */
+    }
   }
