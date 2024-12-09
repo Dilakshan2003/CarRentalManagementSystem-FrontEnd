@@ -10,6 +10,7 @@ import { RentalRequestComponent } from './Components/managercomponents/rental-re
 import { InboxComponent } from './Components/inbox/inbox.component';
 import { ManagerInboxComponent } from './Components/managercomponents/manager-inbox/manager-inbox.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
+import { CustomerupdateComponent } from './Components/customerupdate/customerupdate.component';
 
 
 
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'inbox', component: InboxComponent},
   { path: 'login', component: LoginComponent},
   { path: 'contact', component: ContactUsComponent},
+  { path: 'updatecustomer', component: CustomerupdateComponent},
+
 
 
 

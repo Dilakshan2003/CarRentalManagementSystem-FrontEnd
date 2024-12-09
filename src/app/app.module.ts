@@ -18,6 +18,7 @@ import { RentalRequestComponent } from './Components/managercomponents/rental-re
 import { InboxComponent } from './Components/inbox/inbox.component';
 import { ManagerInboxComponent } from './Components/managercomponents/manager-inbox/manager-inbox.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
+import { CustomerupdateComponent } from './Components/customerupdate/customerupdate.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ContactUsComponent } from './Components/contact-us/contact-us.component
     RentalRequestComponent,
     InboxComponent,
     ManagerInboxComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    CustomerupdateComponent
     
     
   ],
