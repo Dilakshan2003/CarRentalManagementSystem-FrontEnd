@@ -1,1 +1,95 @@
-<p>find works!</p>
+
+    
+
+<div class="customer-container">
+    <h2>Customer Details</h2>
+  
+    <!-- Input field for customer ID -->
+  
+    <input type="text" [(ngModel)]="customerId" placeholder="Enter Customer ID" />
+    <button (click)="getCustomer()">Search Customer</button>
+  
+    <!-- Display error message if any -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <!-- Display customer data if available -->
+    <table *ngIf="customer">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>NIC</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>License Number</th>
+          <th>Password</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ customer.name }}</td>
+          <td>{{ customer.nic }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.phoneNumber }}</td>
+          <td>{{ customer.address }}</td>
+          <td>{{ customer.licenceNumber }}</td>
+          <td>{{ customer.password }}</td>
+          <td><button (click)="deleteCustomerRecords()">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Message after deleting the customer -->
+    <div *ngIf="!customer && errorMessage == 'Customer deleted successfully!'">
+      Customer has been successfully deleted.
+    </div>
+  </div>
+  
+  <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <div class="container">
+    <h2>Car Details</h2>
+  
+    <!-- Input for car ID -->
+    <div class="search-section">
+     
+      <input [(ngModel)]="carId" id="carId" type="number" placeholder="Enter car ID" /> <br>
+      <button (click)="fetchCarDetails()">Search Car</button>
+    </div>
+  
+
+    <div *ngIf="carDetails" class="car-details">
+      <table *ngIf="carDetails">
+        <thead>
+          <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Price Per Day</th>
+            <th>Color</th>
+            <th>Available</th>
+            <th>Image</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ carDetails.make }}</td>
+            <td>{{ carDetails.model }}</td>
+            <td>{{ carDetails.year }}</td>
+            <td>{{ carDetails.pricePerDay | currency }}</td>
+            <td>{{ carDetails.color }}</td>
+            <td>{{ carDetails.isAvailable ? 'Yes' : 'No' }}</td>
+            <td><img [src]="carDetails.imageFilePath" alt="Car Image" width="100"></td>
+            <td><button (click)="deleteCarRecord()">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Show message when no details found -->
+    <div *ngIf="message" class="error-message">
+      {{ message }}
+    </div>
+  </div>

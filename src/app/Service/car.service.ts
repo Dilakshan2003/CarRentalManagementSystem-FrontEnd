@@ -58,7 +58,7 @@ private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
 
   // Approve or Cancel a booking
   manageBookingStatus(bookingId: number, status: string): Observable<any> {
-    return this.http.put(`http://localhost:5120/api/Booking`, { status });
+    return this.http.put( this .bookingUrl, { bookingId, status });
   }
   
   getCustomerBookings(): Observable<Booking[]> {
@@ -86,5 +86,12 @@ private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
   deleteMessage(messageId: number) {
     return this.http.delete(`${this.messageUrlUrl}${messageId}`);
   }
+ 
 
-}
+  getCarById(carId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${carId}`);
+  }
+
+  
+  }
+

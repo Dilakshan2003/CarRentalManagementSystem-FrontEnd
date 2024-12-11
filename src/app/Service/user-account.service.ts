@@ -47,7 +47,11 @@ export class UserAccountService {
   }
 
   
+  getCustomerDetails(customerId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${customerId}`);
+  }
 
+  //  delete customer record
 
 
 }

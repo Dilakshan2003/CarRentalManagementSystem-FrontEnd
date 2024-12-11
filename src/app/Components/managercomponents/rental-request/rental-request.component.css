@@ -1,6 +1,6 @@
 
 .booking-card {
-    background-color: #000000;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(21, 51, 88), rgb(16, 80, 80));
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;

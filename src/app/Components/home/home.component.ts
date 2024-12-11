@@ -64,6 +64,7 @@ export class HomeComponent {
         console.log('Booking saved:', response);
         this.bookingForm.reset();  // Reset the form after successful submission
         alert('Booking added successfully!');
+        alert('check your message box later');
       }
     );
   }

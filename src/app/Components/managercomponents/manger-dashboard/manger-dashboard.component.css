@@ -1,4 +1,7 @@
 
+.down{
+background-image: url(/images/car\ in\ right\ \ site.jpg);
+}
 
  .fulldashboard {
   display: flex;
@@ -7,7 +10,7 @@
 
 .sideBar {
   width: 250px;
-  background-color: #000000; 
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(50, 203, 214), rgb(4, 9, 46));
   color: white;
   padding: 20px;
   height: 100%;

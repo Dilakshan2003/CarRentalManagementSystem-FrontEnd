@@ -34,19 +34,26 @@ body {
 /* Contact Details Section */
 .contact-details {
   margin-bottom: 30px;
+  background-color: rgba(4, 39, 39, 0.5); 
+  backdrop-filter: blur(10px); 
+  border-radius: 8px; 
 }
 
 .contact-details h3 {
   font-size: 2.2em;
-  color: #ff4b2b;
+  color: #fdfdfd;
   text-align: center;
   margin-bottom: 15px;
+  font-family: bold;
+  letter-spacing: 3px;
+
 }
 
 .contact-details p {
   font-size: 1.2em;
   margin-bottom: 12px;
   color: #e0e0e0;
+  margin-left: 40px;                                                                                                                                        
 }
 
 .contact-details strong {

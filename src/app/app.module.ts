@@ -20,6 +20,7 @@ import { ManagerInboxComponent } from './Components/managercomponents/manager-in
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { CustomerupdateComponent } from './Components/customerupdate/customerupdate.component';
 import { FindComponent } from './Components/managercomponents/find/find.component';
+import { RentedComponent } from './Components/managercomponents/rented/rented.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { FindComponent } from './Components/managercomponents/find/find.componen
     ContactUsComponent,
     CustomerupdateComponent,
     FindComponent,
+    RentedComponent,
 
     
   ],
