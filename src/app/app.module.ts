@@ -19,6 +19,8 @@ import { InboxComponent } from './Components/inbox/inbox.component';
 import { ManagerInboxComponent } from './Components/managercomponents/manager-inbox/manager-inbox.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { CustomerupdateComponent } from './Components/customerupdate/customerupdate.component';
+import { FindComponent } from './Components/managercomponents/find/find.component';
+
 
 @NgModule({
   declarations: [
@@ -34,8 +36,9 @@ import { CustomerupdateComponent } from './Components/customerupdate/customerupd
     InboxComponent,
     ManagerInboxComponent,
     ContactUsComponent,
-    CustomerupdateComponent
-    
+    CustomerupdateComponent,
+    FindComponent,
+
     
   ],
   imports: [

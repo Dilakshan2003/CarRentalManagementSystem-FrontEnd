@@ -1,42 +1,97 @@
-.contact-container {
-    margin: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  input, textarea, select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-  }
-   .contact-details{
-    background-color: rgb(241, 190, 190);
-   }
-  .contact-details, .map {
-    margin-top: 30px;
-  }
-  
-  .map iframe {
-    width: 100%;
-    height: 350px;
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  h3{
-    letter-spacing: 3px;
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/images/car\ in\ right\ \ site.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh;
+  /* display: flex; */
+  align-items: center;
+  padding: 0;
+}
+
+/* Main Container Styling */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1200px;
+  height: 80%; /* Ensure it's not too tall */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Contact Details Section */
+.contact-details {
+  margin-bottom: 30px;
+}
+
+.contact-details h3 {
+  font-size: 2.2em;
+  color: #ff4b2b;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact-details p {
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  color: #e0e0e0;
+}
+
+.contact-details strong {
+  color: #ff4b2b;
+}
+
+.contact-info {
+  font-weight: bold;
+  color: #f39c12;
+}
+
+/* Google Map Section */
+.map {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
+  background-color: #222;
+  border-radius: 10px;
+
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+      width: 100%;
+      height: auto;
+      padding: 20px;
   }
+
+  .contact-details h3 {
+      font-size: 1.8em;
+  }
+
+  .contact-details p {
+      font-size: 1em;
+  }
+
+  /* iframe {
+      height: 300px;
+  } */
+}
