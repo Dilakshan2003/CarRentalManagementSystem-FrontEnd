@@ -4,7 +4,7 @@ export interface Booking {
     carId : Number;
     startDate: string; 
     endDate: string;   
-    status: number;    
+    status: string;    
     createdDate: string; 
     // imageFilePath: string;
 }

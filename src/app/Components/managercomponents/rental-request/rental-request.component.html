@@ -8,20 +8,19 @@
     <p class="booking-details">Car ID: {{ booking.carId }}</p>
     <p class="booking-details">Start Date: {{ booking.startDate }}</p>
     <p class="booking-details">End Date: {{ booking.endDate }}</p>
-  
+    <p class="booking-details">Status: {{ booking.status }}</p>
     <p class="booking-details">booked Date: {{ booking.createdDate }}</p>
-    <div *ngIf="status" style="font-size: 20px; font-weight: bold; margin-top: 20px; color: aliceblue;"> {{ status }}</div>
    
 
 
 
-    <div class="booking-actions">
-      <button (click)="setStatus('approved')">Approve</button>
-      <button (click)="setStatus('canceled')">Cancel</button>
-      <button (click)="setStatus('pending')">pending</button>
+  <div class="booking-actions">
+      <button (click)="manageBooking(booking.bookingId, 'approved')">Approve</button>
+      <button (click)="manageBooking(booking.bookingId, 'cancelled')">Cancel</button>
       <button (click)="deleteBooking(booking.bookingId)">Delete</button>
-    </div>
   </div>
+  </div>
+
   <div style="margin-left: 100px; width: 100%; margin-top: 60px;">
     <form #messageForm="ngForm" (ngSubmit)="sendMessage(booking.bookingId)">
       <textarea  placeholder="Type your message to Customer"

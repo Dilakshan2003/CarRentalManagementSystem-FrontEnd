@@ -17,8 +17,6 @@ export class RentalRequestComponent {
     customerId: localStorage.getItem('customerId')
    
   }
-  
-  status: string = '';
 
   bookings: Booking[] = []; // Declare bookings property with type
 
@@ -37,11 +35,17 @@ export class RentalRequestComponent {
   }
 
   // Approve or cancel the booking
-  setStatus(action: string): void {
-    this.status = action === 'approved' ? 'Approved' : (action === 'canceled' ? 'Canceled' : 'Pending');
+  manageBooking(bookingId: number, status: string) {
+    this.carService.getBookingById(bookingId).subscribe(data => {
+      data.status = status;
+      console.log(data);
+      this.carService.manageBookingStatus(bookingId, data).subscribe(response => {
+        console.log(`Booking ${status}:`, response);
+        this.fetchPendingBookings(); // Refresh the list after action
+      });
+    })
+  
   }
-
-
 
   sendMessage(bookingId : number) {
     let messageContent = document.getElementById(`${bookingId}`) as HTMLInputElement;

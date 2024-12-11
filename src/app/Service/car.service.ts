@@ -57,13 +57,17 @@ private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
   }
 
   // Approve or Cancel a booking
-  manageBookingStatus(bookingId: number, status: string): Observable<any> {
-    return this.http.put( this .bookingUrl, { bookingId, status });
+  manageBookingStatus(bookingId: number, status: Booking): Observable<any> {
+    return this.http.put( 'http://localhost:5120/api/Booking/'+bookingId, status);
+  }
+  getBookingById(id : number){
+    return this.http.get<Booking>('http://localhost:5120/api/Booking/' + id);
   }
   
   getCustomerBookings(): Observable<Booking[]> {
    
     const customerId = 123; 
+
     return this.http.get<Booking[]>(`${this.bookingUrl}/${customerId}/bookings`);
   }
 

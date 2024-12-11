@@ -4,3 +4,4 @@ export interface message {
   sender: string;
   sentDate: Date;
 }
+
