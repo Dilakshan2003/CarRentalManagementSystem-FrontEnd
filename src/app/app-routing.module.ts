@@ -12,6 +12,7 @@ import { ManagerInboxComponent } from './Components/managercomponents/manager-in
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { CustomerupdateComponent } from './Components/customerupdate/customerupdate.component';
 import { FindComponent } from './Components/managercomponents/find/find.component';
+import { RentedComponent } from './Components/managercomponents/rented/rented.component';
 
 
 
@@ -36,6 +37,8 @@ const routes: Routes = [
         { path: 'rentalRequest', component: RentalRequestComponent},
         { path: 'manger-inbox', component: ManagerInboxComponent},
         { path: 'manger-find', component: FindComponent},
+        { path: 'manger-rent', component: RentedComponent},
+
         
 
     ]

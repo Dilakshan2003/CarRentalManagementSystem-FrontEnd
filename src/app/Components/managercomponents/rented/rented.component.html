@@ -1,1 +1,88 @@
+<div>
+    <label for="bookingId">Enter Booking ID:</label>
+    <input style="margin-left: 25px;"
+      type="number"
+      id="bookingId"
+      [(ngModel)]="bookingId"
+      placeholder="Enter booking ID"
+    />
+     
+    <button (click)="fetchBooking()" class="whutw" >Find Booking</button>
+  </div>
+  
+  <div *ngIf="isLoading">Loading booking details...</div>
+  
+  <div *ngIf="error" class="error">{{ error }}</div>
+  
+  <table *ngIf="booking">
+    <thead>
+      <tr>
+        <th>Booking ID</th>
+        <th>Customer ID</th>
+        <th>Car ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Status</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ booking.bookingId }}</td>
+        <td>{{ booking.customerId }}</td>
+        <td>{{ booking.carId }}</td>
+        <td>{{ booking.startDate }}</td>
+        <td>{{ booking.endDate }}</td>
+        <td>{{ booking.status }}</td>
+        <td>{{ booking.createdDate }}</td>
+        <td>
+          <button (click)="fetchRentData()" class="rent-button">Rent</button>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div *ngIf="!isLoading && !booking && !error" style="color: red;">
+    No booking details to display.
+  </div>
+  
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
+     <h1 style="color:azure; text-align: center;">Rented details</h1>
+
+
+     <div class="rent-container">
+ 
+    
+      <div *ngIf="isLoading">Loading...</div>
+    
+      <table *ngIf="rentData.length > 0" class="rent-table">
+        <thead>
+          <tr>
+            <th>Rent ID</th>
+            <th>Customer ID</th>
+            <th>Booking ID</th>
+            <th>Car ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Rented Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rent of rentData">
+            <td>{{ rent.rentId }}</td>
+            <td>{{ rent.customerId }}</td>
+            <td>{{ rent.bookingId }}</td>
+            <td>{{ rent.carId }}</td>
+            <td>{{ rent.startDate }}</td>
+            <td>{{ rent.endDate }}</td>
+            <td>{{ rent.status }}</td>
+            <td>{{ rent.rentedDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    

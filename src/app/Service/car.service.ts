@@ -17,7 +17,10 @@ private apiUrl = 'http://localhost:5120/api/Car';
 private bookingUrl = 'http://localhost:5120/api/Booking';
 private messageUrlUrl = 'http://localhost:5120/api/Message/';
 private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
+private rentax = 'http://localhost:5120/api/Rent';
 
+
+ 
 
   constructor(private http: HttpClient) {}
 
@@ -96,6 +99,21 @@ private cusBooking = 'http://localhost:5120/api/Booking?CustomerId=';
     return this.http.get<any>(`${this.apiUrl}/${carId}`);
   }
 
-  
+
+  getBookingByIds(bookingId: number): Observable<any> {
+    return this.http.get<any>(`${this.bookingUrl}/${bookingId}`);
+  }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Function to get rented details from the API
+getRentedDetails(): Observable<any> {
+  return this.http.get<any>(this.bookingUrl);
+}
+
+
+getRentData(): Observable<any[]> {
+  return this.http.get<any[]>(this.rentax);
+}
+
   }
 
