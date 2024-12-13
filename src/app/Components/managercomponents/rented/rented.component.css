@@ -12,11 +12,22 @@
   }
   
   th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
   }
   
+  th {
+    background-color: #3498db;
+    color: rgb(15, 15, 15);
+  }
+  
+  td {
+    background-color: #ffffff;
+    color: black;
+  }
+
+
   button {
     background-color: rgb(211, 29, 29);
     color: rgb(255, 255, 255);
@@ -32,7 +43,7 @@
   }
   
   label{
-    color: white;
+    color: rgb(255, 255, 255);
     
   }
 
@@ -62,12 +73,12 @@
   }
   
   .rent-table th, .rent-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #07102e;
     padding: 8px;
     text-align: center;
   }
   
   .rent-table th {
-    background-color: #f4f4f4;
+    background-color: #3498db;
   }
   

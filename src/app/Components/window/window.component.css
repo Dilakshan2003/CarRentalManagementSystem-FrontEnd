@@ -44,10 +44,4 @@ p{
 }
 
 /* app.component.css */
-video {
-  width: 100%;  /* Adjust the video to fill the container width */
-  height: auto; /* Maintains the aspect ratio */
-  max-width: 100%; /* Optional: Set a maximum width for the video */
-  display: block; /* Ensures the video is treated as a block-level element */
-  margin: 0 auto; /* Centers the video horizontally */
-}
+

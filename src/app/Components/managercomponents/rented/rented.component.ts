@@ -55,5 +55,30 @@ ngOnInit(): void {
    })
   }
 
+  postRent(id : number){
+    this.CarService.getBookingByIds(id).subscribe(data => {
+      console.log(data);
+      data.status = 'Rented'
+      this.CarService.postRentData(data , id).subscribe(data => {
+        console.log(data);  
+        
+      })
+    })
+  }
 
+
+  deleteRent(rentId: number): void {
+    this.CarService.deleteRentData(rentId).subscribe({
+      next: () => {
+        // Remove the deleted rent from the rentData array
+        this.rentData = this.rentData.filter((rent) => rent.rentId !== rentId);
+        console.log(`Rent with ID ${rentId} deleted.`);
+      },
+      error: (err: any) => {
+        console.error('Error deleting rent:', err);
+        this.error = 'Failed to delete rent details.';
+      },
+    });
+
+  }
 }

@@ -11,19 +11,24 @@ background-image: url(/images/car\ in\ right\ \ site.jpg);
 .sideBar {
   width: 250px;
   background-image: linear-gradient(rgb(0, 0, 0), rgb(50, 203, 214), rgb(4, 9, 46));
-  color: white;
+  color: white; 
   padding: 20px;
   height: 100%;
   position: fixed; 
+
 }
 
 .sideBar ul {
   list-style-type: none;
   padding: 0;
+  
 }
 
 .sideBar ul li {
-  margin: 15px 0;
+  margin: 10px 0;
+  font-size: 22px;
+  font-family: bold
+
 }
 
 .sideBar ul li a {

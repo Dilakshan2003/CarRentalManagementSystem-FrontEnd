@@ -103,7 +103,7 @@ private rentax = 'http://localhost:5120/api/Rent';
   getBookingByIds(bookingId: number): Observable<any> {
     return this.http.get<any>(`${this.bookingUrl}/${bookingId}`);
   }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////http://localhost:5120/api/Rent?BookingId=1
 
 // Function to get rented details from the API
 getRentedDetails(): Observable<any> {
@@ -115,5 +115,14 @@ getRentData(): Observable<any[]> {
   return this.http.get<any[]>(this.rentax);
 }
 
-  }
+postRentData(rentData: any, bookingId: number): Observable<any> {
+  // Correct API call with the bookingId in the URL
+  return this.http.post<any>(`http://localhost:5120/api/Rent?BookingId=${bookingId}`, rentData);
+}
+deleteRentData(rentId: number): Observable<any> {
+  return this.http.delete<any>(`${this.rentax}/${rentId}`);
+}
+
+
+}
 
