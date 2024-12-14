@@ -57,7 +57,9 @@ export class RentalRequestComponent {
         customerId : localStorage.getItem('customerId'),
         sender : 'Manager',
         content : message
+        
       }
+      this.fetchPendingBookings();
       alert('Message sent successfully!'); 
       this.carService.sendMessage(reply).subscribe((data) => {
         message = '';

@@ -26,8 +26,8 @@ export class LoginComponent  {
 
   onSubmit() {
     
-    const hardcodedManagerEmail = 'a@gmail.com';
-    const hardcodedManagerPassword = 'aaaaaaaa';
+    const hardcodedManagerEmail = 'admin@gmail.com';
+    const hardcodedManagerPassword = 'admin123';
 
     if (this.loginForm.valid) {
       
@@ -45,9 +45,7 @@ export class LoginComponent  {
               let user = JSON.parse(JSON.stringify(response))
               localStorage.setItem('customerId' , user.id)
               this.router.navigate(['/home']);
-            } else {
-              alert('Invalid credentials');
-            }
+            } 
           },
           (error) => {
             console.error('Login failed', error);
