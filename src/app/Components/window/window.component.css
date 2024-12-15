@@ -1,47 +1,65 @@
 .slider-container {
-    position: relative;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding: 20px;
-  }
-
- .heading{
-    padding-top: 100px;
-    text-align: center;
-    font-size: 60px;
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px #FF0000;
-    font-weight: bold;
+  position: relative;
 }
 
-h4{
-    padding-top: 10px;
-    text-align: center;
-    font-size: 30px;
-    color: rgb(247, 241, 241);
-    text-shadow: 2px 2px #160202;
-    font-weight: bold;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 20px;
 }
 
-p{
-    padding-top: 5px;
-    text-align: right;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-   
-    font-weight: bold;
-    margin-right: 80px;
-    padding-top: 25px
-
+.heading {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px #FF0000;
+  font-weight: bold;
 }
+
+h4 {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(247, 241, 241);
+  text-shadow: 2px 2px #160202;
+  font-weight: bold;
+}
+
+p {
+  padding-top: 5px;
+  text-align: right;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+ 
+  font-weight: bold;
+  margin-right: 80px;
+  padding-top: 25px
+}
+
+.fullscreen-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /* Full viewport width */
+  height: 100vh;
+  /* Full viewport height */
+  object-fit: cover;
+  /* Ensures the video covers the area without distortion */
+  z-index: -5;
+  /* Sends the video behind other content */
+  background-color: black;
+  /* Fallback color in case the video doesn't load */
+  filter: blur(5px)  ;
+  background: rgb(255, 255, 255);
+  opacity: 0.5;
+}
+
 
 /* app.component.css */
-
