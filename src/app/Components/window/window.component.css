@@ -58,7 +58,7 @@ p {
   /* Fallback color in case the video doesn't load */
   filter: blur(5px)  ;
   background: rgb(255, 255, 255);
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 

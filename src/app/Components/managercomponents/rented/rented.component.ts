@@ -61,7 +61,7 @@ ngOnInit(): void {
       data.status = 'Rented'
       this.CarService.postRentData(data , id).subscribe(data => {
         console.log(data);  
-        
+        this.fetchRentData();
       })
     })
   }
